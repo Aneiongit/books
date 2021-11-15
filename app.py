@@ -39,28 +39,6 @@ def remove_book(book_id):
     return jsonify({'result': result})
 
 
-@app.route("/books/<int:todo_id>", methods=["PUT"])
-def update_book(book_id):
-    book = books.get(book_id)
-    if not book:
-        abort(404)
-    if not request.json:
-        abort(400)
-    data = request.json
-    if any([
-        'title' in data and not isinstance(data.get('title'), str),
-        'description' in data and not isinstance(data.get('description'), str),
-    ]):
-        abort(400)
-    book = {
-        'title': data.get('title', book['title']),
-        'description': data.get('description', book['description']),
-
-    }
-    books.update(book_id, book)
-    return jsonify({'book': book})
-
-
 @app.errorhandler(404)
 def not_found(error):
     return make_response(jsonify({'error': 'Not found', 'status_code': 404}), 404)

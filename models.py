@@ -39,14 +39,5 @@ class Books:
             return True
         return False
 
-    def update(self, id, data):
-        book = self.get(id)
-        if book:
-            index = self.books.index(book)
-            self.books[index] = data
-            self.save_all()
-            return True
-        return False
-
 
 books = Books()
