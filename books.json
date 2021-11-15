@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1, 
+        "title": "Pan Tadeusz", 
+        "description": "Pan Tadeusz książka"
+    }, 
+    {
+        "id": 2, 
+        "title": "Ogniem i mieczem", 
+        "description": "Ogniem i mieczem książka"
+    }
+]
